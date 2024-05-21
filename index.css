@@ -1,0 +1,252 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background1: #22181c;
+  --background2: #f6e8ea;
+  --primary: #f45b69;
+  --secondary: #5a0001;
+  --tertiary: #f67979;
+  --grey: #6b7280;
+  --lightgrey: #c3c3c3;
+  --light: white;
+  --pwdbackground: #273549;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  font-family: "Karla", sans-serif;
+}
+
+.container {
+  background-color: var(--background1);
+  max-width: 700px;
+  /* height: 700px; */
+  border: 30px solid var(--background1);
+  margin: 10vh auto;
+}
+
+.inner-container {
+  flex-basis: 100%;
+  display: grid;
+  background-color: var(--background2);
+  padding: 20px 50px 20px 50px;
+}
+
+.container,
+.inner-container {
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+
+  line-height: 40px;
+  letter-spacing: -1px;
+  color: var(--background1);
+}
+
+h1 span {
+  color: var(--primary);
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--grey);
+  margin: -15px 0 50px 0;
+}
+
+.password-options {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+
+#gen-pwd {
+  width: 191px;
+  height: 42px;
+  background-color: var(--primary);
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--light);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#gen-pwd:hover {
+  background-color: var(--secondary);
+}
+
+#gen-pwd:active {
+  transform: translateY(1px);
+}
+
+hr {
+  width: 100%;
+  height: 0.05rem;
+  border: 0;
+  background-color: rgb(230, 230, 230);
+  margin: 50px 0 0 0;
+}
+
+.passwords {
+  display: flex;
+  justify-content: space-between;
+  row-gap: 10px;
+  flex-wrap: wrap;
+  margin: 90px 0 30px 0;
+}
+
+#password1,
+#password2 {
+  width: 260px;
+  height: 42px;
+  text-align: center;
+  background-color: var(--pwdbackground);
+  color: var(--tertiary);
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+#password1:hover,
+#password2:hover {
+  cursor: pointer;
+}
+
+#copy-note {
+  font-size: 0.8rem;
+}
+
+/* checkbox start ***************************************************/
+
+.checkbox-display {
+  margin: 0 auto;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--lightgrey);
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: var(--grey);
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--primary);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* checkbox end ***************************************************/
+
+/* password length start ***************************************************/
+.slidecontainer {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.slidecontainer p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: var(--lightgrey);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+/* password length end ***************************************************/
